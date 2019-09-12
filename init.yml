@@ -3,3 +3,8 @@
   hosts: nodes
   roles:
     - { role: 'init', tags: "init", when: "ansible_os_family == 'RedHat'" }
+
+- name: "Install Docker"
+  hosts: nodes
+  roles:
+    - { role: 'docker', tags: "docker", when: "ansible_os_family == 'RedHat'" }
