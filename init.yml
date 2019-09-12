@@ -1,0 +1,5 @@
+---
+- name: "CentOS 7 Initialization"
+  hosts: nodes
+  roles:
+    - { role: 'init', tags: "init", when: "ansible_os_family == 'RedHat'" }
